@@ -13,16 +13,23 @@
             align-items: center;
             justify-content: center;
             min-height: 100vh;
-            background-color: #f7f9fc;
+            /* 使用 Unsplash 免費圖庫的鮮豔粉色抽象底圖 */
+            background-color: #ff9a9e;
+            background-image: url('https://images.unsplash.com/photo-1557682250-33bd709cbe85?q=80&w=1080&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
             font-family: 'Helvetica Neue', Arial, sans-serif;
         }
         .card-container {
             width: 90%;
             max-width: 400px;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-            border-radius: 12px;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+            border-radius: 16px;
             overflow: hidden;
-            background-color: #fff;
+            /* 讓卡片帶有一點微透明的質感，融入鮮豔背景 */
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(5px);
             text-align: center;
             padding-bottom: 24px;
         }
@@ -30,37 +37,46 @@
             width: 100%;
             height: auto;
             display: block;
+            /* 設定最小高度與淺灰色底，確保圖片還沒載入時版面不會縮成一團 */
+            min-height: 200px;
+            background-color: #f0f0f0;
         }
         .download-btn {
             display: inline-block;
             margin-top: 20px;
             padding: 12px 24px;
-            background-color: #007aff;
+            /* 改用粉紅/蜜桃色漸層按鈕，更活潑討喜 */
+            background: linear-gradient(135deg, #ff758c 0%, #ff7eb3 100%);
             color: white;
             text-decoration: none;
             font-size: 16px;
             font-weight: bold;
             border-radius: 25px;
-            transition: background-color 0.3s;
+            box-shadow: 0 4px 15px rgba(255, 117, 140, 0.4);
+            transition: transform 0.2s, box-shadow 0.2s;
         }
         .download-btn:active {
-            background-color: #005bb5;
+            transform: scale(0.95);
+            box-shadow: 0 2px 10px rgba(255, 117, 140, 0.3);
         }
         .greeting-text {
             margin-top: 20px;
             font-size: 18px;
             color: #333;
+            font-weight: bold;
         }
     </style>
 </head>
 <body>
 
     <div class="card-container">
-        <img src="card.jpg" alt="祝賀卡" class="card-image">
+        <!-- ⚠️ 第一處修改：請將 "你的圖片完整檔名.jpg" 換成你在 GitHub 上的實際檔名 -->
+        <img src="cord.jpg" alt="祝賀卡" class="card-image">
         
         <div class="greeting-text">✨ 誠摯的祝福 ✨</div>
         
-        <a href="card.jpg" download="2026專屬祝賀卡.jpg" class="download-btn">
+        <!-- ⚠️ 第二處修改：這裡的 href 也要改成跟上面完全一樣的檔名 -->
+        <a href="cord.jpg" download="專屬妳的畢業祝賀卡片.jpg" class="download-btn">
             📥 點擊儲存卡片
         </a>
     </div>
